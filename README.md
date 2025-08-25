@@ -1,6 +1,19 @@
 # iloc
-项目测试描述
-在 pandas 中，iloc 是用于按位置索引（即行号和列号）来选取数据的方法，全称是 "integer location"（整数位置）。它通过整数索引来定位数据，类似于 Python 列表的索引方式。
-基本用法：
-# 假设 df 是一个 DataFrame
-df.iloc[行索引, 列索引]
+import pandas as pd
+
+# 创建一个示例 DataFrame
+data = {
+    '姓名': ['张三', '李四', '王五'],
+    '年龄': [25, 30, 35],
+    '城市': ['北京', '上海', '广州']
+}
+df = pd.DataFrame(data)
+
+# 获取第一行数据
+first_row = df.iloc[0]
+print("第一行数据：")
+print(first_row)
+
+# 可以像访问 Series 一样获取具体列的值
+print("\n第一行的姓名：", first_row['姓名'])
+print("第一行的年龄：", first_row['年龄'])
